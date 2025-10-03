@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ConfirmModal({
+export default function Confirm({
   open,
   title = "Confirm",
   message = "Are you sure?",

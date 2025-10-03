@@ -56,7 +56,7 @@ export default function ProfileView() {
           }));
           setPosts(userPosts);
         } catch (err) {
-          console.error("❌ Error fetching data:", err);
+          console.error("Error fetching data:", err);
           toast.error("Failed to load profile data.");
         }
       } else {
@@ -253,9 +253,9 @@ export default function ProfileView() {
         </div>
       </div>
       <div className="mt-8">
-        <h3 className="text-2xl font-bold text-gray-800 mb-4 border-b-4 border-green-500 pb-2 flex items-center space-x-2">
+        <h3 className="text-2xl font-bold text-gray-800 mb-4 border-b-4 border-cyan-500 pb-2 flex items-center space-x-2">
           <span>My Posts</span> 
-          <span className="text-lg text-green-600 font-extrabold">({posts.length})</span>
+          <span className="text-lg text-cyan-600 font-extrabold">({posts.length})</span>
         </h3>
         <div className="space-y-4">
           {posts.length === 0 ? (

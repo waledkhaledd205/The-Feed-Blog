@@ -9,15 +9,14 @@ import {
 } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { toast } from "react-toastify";
-import ConfirmModal from "../../components/ConfirmModal"; // 1. استيراد المودال
-
+import Confirm from "../../components/Confirm"; 
 function AddPost() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false); // 2. حالة المودال
+  const [showConfirm, setShowConfirm] = useState(false); 
 
   const isDataPresent = title.trim() !== "" || desc.trim() !== "" || imageFile !== null;
 
@@ -38,16 +37,14 @@ function AddPost() {
     toast.info("Form cleared successfully.");
   };
 
-  // 4. دالة لفتح المودال عند النقر على زر الإرسال
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title && !desc && !imageFile) return; // منع الإرسال إذا كان فارغًا تمامًا
+    if (!title && !desc && !imageFile) return; 
     setShowConfirm(true); 
   };
   
-  // 5. دالة النشر الفعلي، يتم استدعاؤها بعد تأكيد المودال
   const confirmAndPublish = async () => {
-    setShowConfirm(false); // إغلاق المودال
+    setShowConfirm(false); 
     setLoading(true);
 
     try {
@@ -188,7 +185,7 @@ function AddPost() {
             )}
             <button 
                 type="submit" 
-                disabled={loading || !isDataPresent} // منع النقر إذا كان فارغًا أو يتم التحميل
+                disabled={loading || !isDataPresent} 
                 className={`
                     ${isDataPresent ? 'flex-1' : 'w-full'} py-3 font-bold text-white rounded-full text-lg 
                     shadow-2xl transition duration-300 ease-in-out transform
@@ -205,15 +202,14 @@ function AddPost() {
 
       </form>
 
-      {/* 6. إضافة المودال إلى الـ JSX */}
-      <ConfirmModal
+      <Confirm
         open={showConfirm}
         title="Confirm Post"
         message="Are you sure you want to share this content?"
         confirmText="Share"
         cancelText="Cancel"
         busy={loading}
-        onConfirm={confirmAndPublish} // ربط التأكيد بدالة النشر الفعلية
+        onConfirm={confirmAndPublish} 
         onCancel={() => setShowConfirm(false)}
       />
 

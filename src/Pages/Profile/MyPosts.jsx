@@ -99,7 +99,6 @@ export default function MyPosts() {
             {posts.map((post) => (
               <div 
                 key={post.id} 
-                // ✨ التعديل هنا للانتقال لصفحة التفاصيل
                 onClick={() => navigate(`/post/${post.id}`)}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 flex flex-col cursor-pointer"
               >
@@ -115,8 +114,7 @@ export default function MyPosts() {
                   <p className="text-sm text-gray-600 mb-3 leading-relaxed flex-grow">
                     {post.desc}
                   </p>
-                  <small className="text-xs text-gray-500 mb-3">✍️ By {post.author}</small>
-                  {/* منع انتقال النقر للبوست عند الضغط على أزرار التعديل والحذف */}
+                  <small className="text-xs text-gray-500 mb-3"> By {post.author}</small>
                   <div className="flex justify-end gap-3 mt-auto" onClick={(e) => e.stopPropagation()}>
                     <button className="btn btn-sm btn-info" onClick={() => startEdit(post)}>Edit</button>
                     <button className="btn btn-sm btn-error" onClick={() => openDeleteConfirm(post.id)}>Delete</button>

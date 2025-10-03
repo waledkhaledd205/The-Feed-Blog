@@ -50,7 +50,7 @@ export default function Post({
               Edit
             </button>
             <button className="px-3 py-1.5 rounded-lg border border-red-300 font-semibold cursor-pointer bg-red-50 text-red-700 hover:bg-red-100 transition">
-              Remove
+              delete
             </button>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/config"; 
 import { toast } from "react-toastify";
 
-export default function AddPostButton() {
+export default function AddPostBtn() {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -11,7 +11,7 @@ export default function AddPostButton() {
     console.log("🔍 Current user:", user);
 
     if (user) {
-      console.log("✅ User is logged in:", user.email);
+      console.log("User is logged in:", user.email);
       navigate("/add");
     } else {
       console.log("No user logged in");

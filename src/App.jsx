@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./features/home/HomeView.jsx";
-import Login from "./features/auth/Login.jsx";
-import AddPost from "./features/posts/AddPost.jsx";
-import About from "./features/about/About.jsx";
-import Register from "./features/auth/Register.jsx";
-import PageNotFound from "./features/about/PangenotFound.jsx";
-import ProfileView from "./features/Profile/profileView.jsx";
+import Home from "./Pages/home/HomeView.jsx";
+import Login from "./Pages/auth/Login.jsx";
+import AddPost from "./Pages/posts/AddPost.jsx";
+import About from "./Pages/about/About.jsx";
+import Register from "./Pages/auth/Register.jsx";
+import PageNotFound from "./Pages/about/NotFound.jsx";
+import ProfileView from "./Pages/Profile/profileView.jsx";
 import { ToastContainer } from "react-toastify";
-import MyPosts from "./features/Profile/MyPosts.jsx";
-import PostDetails from "./features/posts/PostDetails.jsx";
-import Loader from "./features/home/Loader.jsx";
+import MyPosts from "./Pages/Profile/MyPosts.jsx";
+import PostDetails from "./Pages/posts/PostDetails.jsx";
+import Loader from "./Pages/home/Loader.jsx";
 import { auth } from "../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
 export default function App() {

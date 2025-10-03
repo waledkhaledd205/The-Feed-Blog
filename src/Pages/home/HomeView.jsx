@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import AddButton from "../../components/addbuttom";
+import AddButton from "../../components/AddBtn";
 import { db } from "../../../firebase/config";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import PostCard from "../../features/home/PostCard"; 
+import PostCard from "../../Pages/home/PostCard"; 
 import NoPosts from "./NoPosts";
-import AddPostButton from "../../components/AddPostButton";
+import AddPostBtn from "../../components/AddPostBtn";
 import Loader from "./Loader";
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       )}
 
-      <AddPostButton onClick={() => (window.location.href = "/add")} />
+      <AddPostBtn onClick={() => (window.location.href = "/add")} />
 
     </div>
   );

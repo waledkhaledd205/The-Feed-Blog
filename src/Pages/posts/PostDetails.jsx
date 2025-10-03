@@ -4,7 +4,7 @@
   import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
   import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
   import Loader from "../home/Loader";
-  import ConfirmModal from "../../components/ConfirmModal";
+  import Confirm from "../../components/Confirm";
 
   export default function PostDetails() {
     const { id } = useParams();
@@ -247,7 +247,7 @@
           </div>
         </div>
 
-        <ConfirmModal
+        <Confirm
           open={showConfirm}
           title="Delete Post"
           message="Are you sure you want to delete this post? This action cannot be undone."
